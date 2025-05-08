@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caroline Yim | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <style>
+    :root {
+      --background: #ffffff;
+      --text: #1e1e1e;
+      --accent: #5f8d8c;
+      --highlight: #f2f2f2;
+      --card-bg: #ffffff;
+      --section-bg: #f7f7f7;
+      --shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: white;
+      border-bottom: 1px solid #eee;
+      padding: 1.5rem 2rem;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    nav .links,
+    nav .socials {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #555;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero {
+      height: 100vh;
+      background: url('fit_2560 (15).jpeg') center center / cover fixed no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 8rem 2rem 2rem;
+      position: relative;
+      z-index: 1;
+      color: white;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      animation: fadeUp 1.2s ease-out both;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin: 0;
+      font-weight: 600;
+      animation: fadeUp 1.6s ease-out 0.4s both;
+    }
+
+    .hero p {
+      max-width: 600px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-top: 1rem;
+      animation: fadeUp 1.8s ease-out 0.6s both;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    section {
+      position: relative;
+      z-index: 2;
+      padding: 6rem 8rem;
+      background-color: var(--background);
+      animation: fadeUp 1s ease-out both;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #111;
+      font-family: 'Inter', sans-serif;
+      text-align: center;
+    }
+
+    .horizontal-scroll {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 2rem;
+      padding-bottom: 1rem;
+    }
+
+    .horizontal-scroll::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .horizontal-scroll::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 3px;
+    }
+
+    .project {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      border-radius: 12px;
+      min-width: 300px;
+      height: 200px;
+      scroll-snap-align: start;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover {
+      transform: scale(1.05);
+    }
+
+    .project-thumb {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      text-align: center;
+      transition: opacity 0.3s ease;
+    }
+
+    .project:hover .overlay {
+      opacity: 1;
+    }
+
+    .overlay h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .overlay p {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .contact {
+      background-color: var(--highlight);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .contact h2 {
+      margin-bottom: 1rem;
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+      display: block;
+      margin: 0.5rem 0;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: var(--highlight);
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="links">
+      <a href="#">work</a>
+      <a href="#">about / contact</a>
+      <a href="resume.pdf" target="_blank">resume</a>
+    </div>
+    <strong>Caroline Yim</strong>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/carolineyim" target="_blank">LinkedIn</a>
+      <a href="mailto:catolineyim@outlook.com">Email</a>
+      <a href="tel:4255986685">Phone</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1 class="reveal">Hi, I’m Caroline Yim.</h1>
+      <p class="reveal">Yes, I am a fish enthusiast. You can catch me at aquariums, theatres, crafting in a makerspace or on the field playing Ultimate Frisbee.</p>
+    </div>
+  </header>
+
+  <section class="section-bg">
+    <h2 class="reveal">Maker Experience</h2>
+    <div class="horizontal-scroll">
+      <a class="project reveal" href="la-foresta.html">
+        <div class="project-thumb">
+          <img src="images/la-foresta-thumbnail.jpg" alt="La Foresta" />
+          <div class="overlay">
+            <h3>La Foresta</h3>
+            <p>Immersive dining meets foraging. My role: experience designer.</p>
+          </div>
+        </div>
+      </a>
+      <a class="project reveal" href="snapquest.html">
+        <div class="project-thumb">
+          <img src="images/snapquest-thumbnail.jpg" alt="SnapQuest" />
+          <div class="overlay">
+            <h3>SnapQuest</h3>
+            <p>A digital toy that reconnects kids with the real world through quests.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="reveal">Business & Marketing</h2>
+    <div class="horizontal-scroll">
+      <a class="project reveal" href="formula-electric.html">
+        <div class="project-thumb">
+          <img src="images/formula-thumbnail.jpg" alt="Formula Electric" />
+          <div class="overlay">
+            <h3>USC Formula Electric</h3>
+            <p>Led team branding, sponsorships, and merch strategy.</p>
+          </div>
+        </div>
+      </a>
+      <a class="project reveal" href="fireapp.html">
+        <div class="project-thumb">
+          <img src="images/fireapp-thumbnail.jpg" alt="Fire App" />
+          <div class="overlay">
+            <h3>Fire App</h3>
+            <p>Evacuation planning tool using LoRa mesh and AI-driven tracking.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section-bg">
+    <h2 class="reveal">Artworks</h2>
+    <div class="horizontal-scroll">
+      <a class="project reveal" href="zine-series.html">
+        <div class="project-thumb">
+          <img src="images/zine-thumbnail.jpg" alt="Zines" />
+          <div class="overlay">
+            <h3>Zines & Prints</h3>
+            <p>Storytelling through playful, illustrative zines and character design.</p>
+          </div>
+        </div>
+      </a>
+      <a class="project reveal" href="merch-design.html">
+        <div class="project-thumb">
+          <img src="images/merch-thumbnail.jpg" alt="Merch Design" />
+          <div class="overlay">
+            <h3>Merch Design</h3>
+            <p>From blueprint jackets to quirky pins, my merch designs center joy and identity.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Get in Touch</h2>
+    <p><a href="mailto:catolineyim@outlook.com">catolineyim@outlook.com</a></p>
+    <p><a href="tel:4255986685">(425) 598-6685</a></p>
+    <p><a href="https://www.linkedin.com/in/carolineyim" target="_blank">LinkedIn Profile</a></p>
+  </section>
+
+  <footer class="reveal">
+    © 2025 Caroline Yim — Designed & coded with a splash of fun
+  </footer>
+
+  <script>
+    ScrollReveal().reveal('.reveal', {
+      duration: 1000,
+      origin: 'bottom',
+      distance: '40px',
+      easing: 'ease-out',
+      reset: false
+    });
+  </script>
+</body>
+</html>
