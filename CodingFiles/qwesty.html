@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qwesty | Caroline Yim</n  </title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <style>
+    :root {
+      --background: #ffffff;
+      --text: #1e1e1e;
+      --accent: #5f8d8c;
+      --highlight: #f7f7f7;
+      --shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family: 'Inter', sans-serif; background: var(--background); color: var(--text); line-height:1.6; }
+    nav {
+      position: fixed; top: 0; width: 100%; background: white; border-bottom:1px solid #eee;
+      padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; z-index:1000;
+    }
+    nav a { text-decoration:none; color:#555; margin-left:1rem; }
+    .project-hero {
+      padding: 10rem 2rem 4rem;
+      text-align: center;
+      background: linear-gradient(135deg, #5f8d8c 0%, #ffffff 100%);
+      color: white;
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-hero h1 { font-family:'Playfair Display', serif; font-size:3rem; margin-bottom:1rem; }
+    .project-hero p { max-width:600px; margin:0 auto; font-size:1.2rem; }
+    section { padding:5rem 2rem; max-width:1000px; margin:0 auto; }
+    section:nth-child(even) { background: var(--highlight); }
+    h2 { font-family:'Playfair Display', serif; font-size:2rem; margin-bottom:1.5rem; text-align:center; color:var(--accent);}    
+    .grid { display:grid; gap:2rem; }
+    .two-col { grid-template-columns:1fr 1fr; }
+    .quote { font-style:italic; margin:1rem 0; }
+    .table { width:100%; border-collapse: collapse; margin:2rem 0; }
+    .table th, .table td { border:1px solid #ddd; padding:0.75rem; text-align:center; }
+    .table th { background:var(--accent); color:#fff; }
+    ul { list-style:disc inside; margin-left:1rem; }
+    footer { text-align:center; padding:2rem; font-size:0.9rem; color:#777; }
+  
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .gallery img {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.05);
+    }
+
+    .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0);
+        cursor: pointer;
+        opacity: 0;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+    }
+
+    .lightbox.active {
+        background-color: rgba(0, 0, 0, 0.9);
+        opacity: 1;
+    }
+
+    .lightbox img {
+        margin: auto;
+        display: block;
+        max-width: 90%;
+        max-height: 90%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+    }
+
+    .lightbox.active img {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html">← Back to Portfolio</a>
+    <div>
+      <strong>SnapQuest</strong>
+    </div>
+    <div>
+      <a href="https://carolineyim.com/resume.pdf" target="_blank">Resume</a>
+      <a href="https://www.linkedin.com/in/carolineyim" target="_blank">LinkedIn</a>
+    </div>
+  </nav>
+
+  <header class="project-hero">
+    <h1 class="reveal">Qwesty</h1>
+    <p class="reveal">A digital toy that helps kids grow up curious, kind, and connected through real-world quests.</p>
+  </header>
+
+  <section id="problem">
+    <h2 class="reveal">Problem Space</h2>
+    <div class="grid two-col reveal">
+      <div>
+        <p>Kids today are spending excessive time on passive screens, leading to reduced social awareness and lost opportunities for sensory play.</p>
+        <p class="quote">“In 2017 there was a phobia of finger painting… they were used to scrolling and pressing screens.”</p>
+        <p>— EMMA, Elementary School Teacher</p>
+      </div>
+      <img src="../Portfolio Artwork/images/Problem.webp" alt="SnapQuest app and toy mockups" style="width:100%; border-radius:8px; object-fit:cover;">
+    </div>
+  </section>
+
+  <section id="solution">
+    <h2 class="reveal">Our Solution</h2>
+    <div class="grid two-col reveal">
+      <img src="../Portfolio Artwork/images/Solution.png" alt="SnapQuest app and toy mockups" style="width:100%; border-radius:8px; object-fit:cover;">
+      <div>
+        <ul>
+          <li>Parents create curated real-world quests for kids aged 5–11.</li>
+          <li>Kids complete quests by taking photos with the SnapQuest camera.</li>
+          <li>Completion uploads to the parent dashboard in real time.</li>
+          <li>Kids earn XP, customize avatars, and build skills.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="validation">
+    <h2 class="reveal">Validation & Analysis</h2>
+    <table class="table reveal">
+      <thead>
+        <tr>
+          <th>Feature</th><th>SnapQuest</th><th>PBS Kids</th><th>Amazon Fire</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Real-world interaction</td><td>✅</td><td>❌</td><td>❌</td></tr>
+        <tr><td>Parental controls</td><td>✅</td><td>❌</td><td>✅</td></tr>
+        <tr><td>Gamification XP</td><td>✅</td><td>❌</td><td>✅</td></tr>
+        <tr><td>Offline use</td><td>✅</td><td>❌</td><td>❌</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="traction">
+    <h2 class="reveal">Traction & Goals</h2>
+    <ul class="reveal">
+      <li>2,000 impressions → 200 link clicks (10% CTR) → 40 leads (20% CVR)</li>
+      <li>Launched Reddit campaigns: Parenting & Mommit groups</li>
+      <li>Instagram Story ads yield 15% engagement</li>
+    </ul>
+  </section>
+
+  <section id="next">
+    <h2 class="reveal">Next Steps</h2>
+    <ul class="reveal">
+      <li>Assemble hardware team for prototype development</li>
+      <li>Design community-based quests with local partners</li>
+      <li>Refine UI/UX of parental dashboard</li>
+      <li>Scale paid social campaigns on Meta</li>
+    </ul>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="../Portfolio Artwork/images/1.png" alt="Slide 1" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/2.png" alt="Slide 2" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/3.png" alt="Slide 3" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/4.png" alt="Slide 4" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/5.png" alt="Slide 5" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/6.png" alt="Slide 6" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/7.png" alt="Slide 7" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/8.png" alt="Slide 8" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/9.png" alt="Slide 9" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/10.png" alt="Slide 10" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/11.png" alt="Slide 11" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/12.png" alt="Slide 12" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/13.png" alt="Slide 13" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/14.png" alt="Slide 14" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/15.png" alt="Slide 15" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/16.png" alt="Slide 16" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/17.png" alt="Slide 17" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/18.png" alt="Slide 18" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/19.png" alt="Slide 19" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/20.png" alt="Slide 20" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/21.png" alt="Slide 21" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/22.png" alt="Slide 22" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/23.png" alt="Slide 23" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/24.png" alt="Slide 24" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/25.png" alt="Slide 25" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/26.png" alt="Slide 26" onclick="openLightbox(this.src)">
+      <img src="../Portfolio Artwork/images/27.png" alt="Slide 27" onclick="openLightbox(this.src)">
+    </div>
+  </section>  
+
+  <footer class="reveal">
+    © 2025 Caroline Yim — SnapQuest Case Study
+  </footer>
+
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Enlarged image">
+  </div>
+
+  <script>
+    ScrollReveal().reveal('.reveal', {
+      duration: 800,
+      origin: 'bottom',
+      distance: '20px',
+      easing: 'ease-out',
+      reset: false
+    });
+
+    function openLightbox(imageSrc) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        
+        lightboxImg.src = imageSrc;
+        lightbox.style.display = 'block';
+        
+        // Force a reflow
+        lightbox.offsetHeight;
+        
+        // Add active class for animation
+        lightbox.classList.add('active');
+        
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        
+        lightbox.classList.remove('active');
+        
+        // Wait for animation to complete before hiding
+        setTimeout(() => {
+            lightbox.style.display = 'none';
+        }, 300);
+        
+        document.body.style.overflow = 'auto';
+    }
+
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeLightbox();
+        }
+    });
+
+    // Add touch swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    document.getElementById('lightbox').addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    document.getElementById('lightbox').addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        if (touchEndX < touchStartX - swipeThreshold) {
+            // Swipe left
+            closeLightbox();
+        }
+    }
+  </script>
+</body>
+</html>
